@@ -29,21 +29,27 @@ namespace vizsgafeladat2
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.termekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.termekBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
             // 
+            this.listBox1.DataSource = this.termekBindingSource;
+            this.listBox1.DisplayMember = "Termeknev";
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 12);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(295, 394);
             this.listBox1.TabIndex = 0;
+            this.listBox1.ValueMember = "Ar";
             // 
             // textBox1
             // 
@@ -62,7 +68,7 @@ namespace vizsgafeladat2
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(404, 46);
+            this.label1.Location = new System.Drawing.Point(390, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 3;
@@ -71,7 +77,7 @@ namespace vizsgafeladat2
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(404, 97);
+            this.label2.Location = new System.Drawing.Point(390, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 4;
@@ -86,6 +92,10 @@ namespace vizsgafeladat2
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // termekBindingSource
+            // 
+            this.termekBindingSource.DataSource = typeof(vizsgafeladat2.Entities.Termek);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,6 +109,7 @@ namespace vizsgafeladat2
             this.Controls.Add(this.listBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.termekBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,6 +123,8 @@ namespace vizsgafeladat2
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource termekBindingSource;
+
     }
-}
+    }
 
